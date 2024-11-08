@@ -2,7 +2,6 @@ import { ReactChildren } from "@/types/common";
 import { createContext, useContext, useState } from "react";
 import { SlideAppContextType } from "./types";
 import React from "react";
-import { Slide } from "./Slide";
 
 const SlideAppContext = createContext<SlideAppContextType | undefined>(
   undefined
