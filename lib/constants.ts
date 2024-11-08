@@ -1,0 +1,1 @@
+export const SLIDE_OWNER_NAME = "Slide"; // This has to be matched (Slide.tsx)
