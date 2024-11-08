@@ -3,6 +3,8 @@ import { createContext, useContext, useState } from "react";
 
 interface SlideAppContextType {
   currentSlideIndex: number;
+  goToPrevSlide: () => void;
+  goToNextSlide: () => void;
 }
 
 const SlideAppContext = createContext<SlideAppContextType | undefined>(
@@ -21,8 +23,14 @@ export const useSlideAppContext = () => {
 
 export const SlideAppProvider: React.FC<ReactChildren> = ({ children }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const goToPrevSlide = () => {
+    setCurrentSlideIndex((prevIndex) => prevIndex - 1);
+  }
+  const goToNextSlide = () => {
+    setCurrentSlideIndex((prevIndex) => prevIndex + 1);
+  } 
   return (
-    <SlideAppContext.Provider value={{currentSlideIndex}}>
+    <SlideAppContext.Provider value={{currentSlideIndex,goToPrevSlide,goToNextSlide}}>
       {children}
     </SlideAppContext.Provider>
   );
