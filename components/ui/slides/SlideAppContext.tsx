@@ -1,11 +1,6 @@
 import { ReactChildren } from "@/types/common";
 import { createContext, useContext, useState } from "react";
-
-interface SlideAppContextType {
-  currentSlideIndex: number;
-  goToPrevSlide: () => void;
-  goToNextSlide: () => void;
-}
+import { SlideAppContextType } from "./types";
 
 const SlideAppContext = createContext<SlideAppContextType | undefined>(
   undefined
