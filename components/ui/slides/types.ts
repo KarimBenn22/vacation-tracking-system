@@ -1,5 +1,5 @@
 export interface SlideAppContextType {
-    currentSlideIndex: number;
-    goToPrevSlide: () => void;
-    goToNextSlide: () => void;
-  }
+  currentSlideIndex: number;
+  goToPrevSlide: () => void;
+  goToNextSlide: () => void;
+}
