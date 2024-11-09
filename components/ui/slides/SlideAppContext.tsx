@@ -1,6 +1,7 @@
 import { ReactChildren } from "@/types/common";
 import { createContext, useContext, useState } from "react";
 import { SlideAppContextType } from "./types";
+import React from "react";
 
 const SlideAppContext = createContext<SlideAppContextType | undefined>(
   undefined
@@ -23,7 +24,7 @@ export const SlideAppProvider: React.FC<ReactChildren> = ({ children }) => {
   }
   const goToNextSlide = () => {
     setCurrentSlideIndex((prevIndex) => prevIndex + 1);
-  } 
+  }
   return (
     <SlideAppContext.Provider value={{currentSlideIndex,goToPrevSlide,goToNextSlide}}>
       {children}
